@@ -11,10 +11,10 @@ $(function() {
     $('.reg-box').hide()
   })
 
-  // 从 layui 中获取 form 对象
+  // 从 layui 中获取 form 对象，和jquery类似，只要导入了layui.js，就能用layui这个对象获取元素。
   var form = layui.form
   var layer = layui.layer
-  // 通过 form.verify() 函数自定义校验规则
+  // 通过 form.verify() 函数自定义校验规则，layui提供的。
   form.verify({
     // 自定义了一个叫做 pwd 校验规则
     pwd: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
@@ -37,6 +37,7 @@ $(function() {
     e.preventDefault()
     // 2. 发起Ajax的POST请求
     var data = {
+      //获取表单用户输入的值。
       username: $('#form_reg [name=username]').val(),
       password: $('#form_reg [name=password]').val()
     }
@@ -45,8 +46,8 @@ $(function() {
         return layer.msg(res.message)
       }
       layer.msg('注册成功，请登录！')
-      // 模拟人的点击行为
-      $('#link_login').click()
+      // 模拟人的点击行为，即转到登录界面。
+      // $('#link_login').click()
     })
   })
 

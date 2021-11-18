@@ -28,10 +28,12 @@ body {
 }
 
 .layui-form {
+  /* 让表单元素左右都有30间距 */
   padding: 0 30px;
 }
 
 .links {
+  /* 去登录，去注册账号那些文字让他们右对齐 */
   display: flex;
   justify-content: flex-end;
 }
@@ -41,15 +43,18 @@ body {
 }
 
 .layui-form-item {
+  /* 子绝父相，为了给小图标定位的 */
   position: relative;
 }
 
 .layui-icon {
+  /* 小图标定位 */
   position: absolute;
   left: 10px;
   top: 10px;
 }
 
 .layui-input {
+  /* 小图标会覆盖iinput标签，placeholder的字被盖住了，简单，给一个内边距就行了 */
   padding-left: 32px;
 }
