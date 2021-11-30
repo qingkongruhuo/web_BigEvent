@@ -5,14 +5,15 @@ $(function() {
   var layer = layui.layer
 
   // 点击按钮，实现退出功能
-  $('#btnLogout').on('click', function() {
+  $('#btnLogout').on('click', function(e) {
+    e.preventDefault()
     // 提示用户是否确认退出
     layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function(index) {
-      //do something
+      //do something,点击确定后的行为。
       // 1. 清空本地存储中的 token
       localStorage.removeItem('token')
       // 2. 重新跳转到登录页面
-      location.href = '/login.html'
+      location.href = './login.html'
 
       // 关闭 confirm 询问框
       layer.close(index)
@@ -27,6 +28,7 @@ function getUserInfo() {
     url: '/my/userinfo',
     success: function(res) {
       if (res.status !== 0) {
+        
         return layui.layer.msg('获取用户信息失败！')
       }
       // 调用 renderAvatar 渲染用户的头像

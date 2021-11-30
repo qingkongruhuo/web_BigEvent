@@ -5,11 +5,13 @@ body {
 }
 
 body {
-  padding: 15px;
+  padding: 15px;  
   background-color: #f2f3f5;
 }
 
 .layui-card-header {
+  /* 弹性盒 */
+  /* 均匀排列每个元素 首个元素放置于起点，末尾元素放置于终点 */
   display: flex;
   justify-content: space-between;
   align-items: center;

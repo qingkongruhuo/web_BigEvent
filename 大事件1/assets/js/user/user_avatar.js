@@ -6,7 +6,7 @@ $(function() {
   // 1.2 配置选项
   const options = {
     // 纵横比
-    aspectRatio: 1,
+    aspectRatio: 1, 
     // 指定预览区域
     preview: '.img-preview'
   }
